@@ -60,9 +60,16 @@
     margin: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 img{
-    max-height: 0px;
+    opacity: 0;
+    transition: opacity 2s ease;
+    transition: height 2s ease;
+    height: 0px;
+
 }
 .error{
     animation: vibrate 0.1s ease-in-out 5;
@@ -85,6 +92,36 @@ img{
     }
 }
 .update{
-    transition: max-height 4s linear 0s;
+    transition: opacity 2s linear 0s;
+    transition: height 2s linear 0s;
     max-height: 200px;
+    opacity: 1;
+    height: 200px;
+}
+.dwld-btn{
+    outline: none;
+    border: none;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    padding:4px; 
+    background-color: rgb(255, 95, 36);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
+    text-decoration: none;
+}
+.upd-btn{
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 4s linear 4s;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 2s ease;
 }
