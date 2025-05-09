@@ -1,9 +1,11 @@
 let inputdata=document.getElementById("qr-data");
 let qrimg=document.querySelector("img");
+let stickimg=document.querySelector(".sticker")
 let dwldbtn=document.querySelector(".dwld-btn")
 document.querySelector("button").addEventListener("click",function(){
   if(inputdata.value.trim().length===0){
     qrimg.classList.remove("update");
+    stickimg.classList.remove("supdate");
     dwldbtn.classList.remove("upd-btn");
     inputdata.classList.add("error");
     setTimeout(()=>{
@@ -13,6 +15,7 @@ document.querySelector("button").addEventListener("click",function(){
   else{
     qrimg.src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="+encodeURIComponent(inputdata.value.trim());
     qrimg.classList.add("update");
+    stickimg.classList.add("supdate")
     setTimeout(()=>{
       dwldbtn.classList.add("upd-btn");
     },3000)
